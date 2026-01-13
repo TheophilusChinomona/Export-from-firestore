@@ -35,11 +35,24 @@ node --version
 
 ## Installation
 
-1. **Clone or copy this directory** to your local machine.
+### Quick Install (One Command)
+
+```bash
+curl -sL https://raw.githubusercontent.com/TheophilusChinomona/Export-from-firestore/main/install.sh | bash
+```
+
+This will clone the repo, install dependencies, and show you the next steps.
+
+### Manual Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/TheophilusChinomona/Export-from-firestore.git
+   cd Export-from-firestore
+   ```
 
 2. **Install dependencies**:
    ```bash
-   cd "Export from Firebase"
    npm install
    ```
 
@@ -108,6 +121,55 @@ npm run export -- --format json
 ```bash
 npm run export -- --format sql
 ```
+
+---
+
+## JSON to SQL Converter
+
+If you've already exported JSON files and want to convert them to SQL without re-reading from Firestore:
+
+```bash
+# Convert all JSON files in output/json to SQL in output/sql
+npm run convert
+
+# Custom input/output directories
+npm run convert -- --input ./my-json --output ./my-sql
+
+# Skip CREATE TABLE statements (INSERT only)
+npm run convert -- --no-create-table
+
+# Skip DROP TABLE IF EXISTS statements
+npm run convert -- --no-drop-table
+```
+
+This is useful when:
+- You want to regenerate SQL with different settings
+- Your Firestore export took a long time and you don't want to re-run it
+- You need to convert JSON archives from previous exports
+
+---
+
+## Resume Interrupted Exports
+
+If an export is cancelled or fails, you can resume from where you left off:
+
+```bash
+# Resume the previous export
+npm run export -- --resume
+
+# Resume with same options
+npm run export -- --format json --resume
+
+# Clear saved state and start fresh
+npm run export -- --reset
+```
+
+The tool saves progress after each collection to `.export-state.json`. When you use `--resume`:
+- Already exported collections are skipped
+- Progress continues from the first incomplete collection
+- Statistics show both completed and remaining collections
+
+> **Note**: The state file tracks the format and collections you specified. If you change options (e.g., switch from `--format json` to `--format sql`), the state will be cleared and a fresh export will start.
 
 ---
 

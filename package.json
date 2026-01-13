@@ -8,7 +8,8 @@
     "export": "node export.js",
     "export:all": "node export.js --all",
     "export:json": "node export.js --format json",
-    "export:sql": "node export.js --format sql"
+    "export:sql": "node export.js --format sql",
+    "convert": "node convert.js"
   },
   "dependencies": {
     "commander": "^12.1.0",

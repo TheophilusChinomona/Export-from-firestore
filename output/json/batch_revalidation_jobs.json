@@ -1,0 +1,26 @@
+{
+  "collection": "batch_revalidation_jobs",
+  "exportedAt": "2026-01-13T09:30:37.133Z",
+  "count": 1,
+  "documents": [
+    {
+      "_id": "524ca82d-31f4-451f-96e6-cbd75e47cf5f",
+      "_path": "batch_revalidation_jobs/524ca82d-31f4-451f-96e6-cbd75e47cf5f",
+      "id": "524ca82d-31f4-451f-96e6-cbd75e47cf5f",
+      "processScrapedFiles": 1,
+      "startedBy": "theoc@speccon.co.za",
+      "startedAt": "2025-12-16T15:20:34.964Z",
+      "jobId": "524ca82d-31f4-451f-96e6-cbd75e47cf5f",
+      "deletedFiles": 0,
+      "processRejectedPdfs": 1,
+      "totalFiles": 726,
+      "movedToAccepted": 1,
+      "failedFiles": 90,
+      "completedAt": "2025-12-16T15:30:39.269Z",
+      "processedFiles": 726,
+      "succeededFiles": 636,
+      "movedToRejected": 159,
+      "status": "completed"
+    }
+  ]
+}

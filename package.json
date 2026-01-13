@@ -1,0 +1,20 @@
+{
+  "name": "firestore-export",
+  "version": "1.0.0",
+  "description": "Export Firestore collections with subcollections to JSON and SQL formats",
+  "main": "export.js",
+  "type": "module",
+  "scripts": {
+    "export": "node export.js",
+    "export:all": "node export.js --all",
+    "export:json": "node export.js --format json",
+    "export:sql": "node export.js --format sql"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "firebase-admin": "^12.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
